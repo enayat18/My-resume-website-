@@ -1,0 +1,470 @@
+/* ==========================================================
+   Enayat Arora - Resume website
+   Mid-term assignment, Website Development (IIMBx)
+
+   Colours used on every page (pink theme)
+     #b82e6b  rose pink    sidebar, main button
+     #7d1747  deep berry   headings, links
+     #d6336c  hot pink     accent: labels, dots, lines
+     #fdf1f6  blush        page background
+     #ffffff  white        boxes and cards
+     #f5cfe0  light pink   borders and lines
+     #3a2530  ink          body text
+
+   Fonts (Google Fonts)
+     Fraunces  headings
+     DM Sans   body text
+
+   Parts of this file
+     A. Basic element styles
+     B. Sidebar (position: fixed)
+     C. Page content area
+     D. Home page pieces
+     E. Resume page pieces (timeline, tags)
+     F. Contact page pieces
+     G. Tablets and phones
+   ========================================================== */
+
+
+/* ---------- A. Basic element styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #fdf1f6;
+  color: #3a2530;
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: #7d1747;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 14px 0;
+}
+
+a {
+  color: #7d1747;
+}
+
+a:hover {
+  color: #d6336c;
+}
+
+a:focus-visible {
+  outline: 3px solid #d6336c;
+  outline-offset: 3px;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+
+/* ---------- B. Sidebar ---------- */
+/* The sidebar is fixed to the left edge and never scrolls away. */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 40px 28px;
+  background-color: #b82e6b;
+  color: #ffffff;
+}
+
+.profile {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.profile:hover {
+  color: #ffffff;
+}
+
+/* Round badge with initials */
+.avatar {
+  display: block;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #b82e6b;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 76px;      /* centres the letters vertically */
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.profile-name {
+  display: block;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.profile-line {
+  color: #ffe6f0;
+  font-size: 0.95rem;
+  margin: 4px 0 36px 0;
+}
+
+.menu li {
+  margin-bottom: 6px;
+}
+
+.menu a {
+  display: block;
+  padding: 9px 14px;
+  border-left: 4px solid transparent;
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #9c245c;
+  color: #ffffff;
+}
+
+/* The page you are on gets a rose bar and a lighter background */
+.menu .current {
+  border-left-color: #ffffff;
+  background-color: #9c245c;
+}
+
+.sidebar-note {
+  position: absolute;      /* pinned to the bottom of the sidebar */
+  bottom: 28px;
+  left: 28px;
+  margin: 0;
+  font-size: 0.8rem;
+  color: #ffe6f0;
+}
+
+
+/* ---------- C. Page content area ---------- */
+/* Pushed right by the width of the sidebar */
+#content {
+  margin-left: 250px;
+  padding: 72px 64px 32px 64px;
+  max-width: 1010px;
+}
+
+.block {
+  margin-bottom: 56px;
+  max-width: 660px;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid #f5cfe0;
+  font-size: 0.9rem;
+}
+
+.page-footer p {
+  margin: 0;
+}
+
+
+/* ---------- D. Home page pieces ---------- */
+.intro {
+  margin-bottom: 48px;
+  max-width: 660px;
+}
+
+.intro-small {
+  margin-bottom: 40px;
+}
+
+.intro-text {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 18px;
+}
+
+.link-row {
+  margin-top: 26px;
+}
+
+/* Rounded links that look like buttons */
+.pill-link {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 22px;
+  border: 2px solid #7d1747;
+  border-radius: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pill-link:hover {
+  border-color: #d6336c;
+}
+
+.pill-link-filled {
+  background-color: #b82e6b;
+  border-color: #b82e6b;
+  color: #ffffff;
+}
+
+.pill-link-filled:hover {
+  background-color: #7d1747;
+  border-color: #7d1747;
+  color: #ffffff;
+}
+
+/* Three white boxes side by side */
+.glance {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 56px;
+}
+
+.glance-box {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #f5cfe0;
+  border-top: 5px solid #d6336c;
+  border-radius: 8px;
+}
+
+.glance-box h3 {
+  font-family: "DM Sans", Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #d6336c;
+  margin-bottom: 6px;
+}
+
+.glance-box p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+
+/* ---------- E. Resume page pieces ---------- */
+/* Timeline: a vertical line with a dot beside each entry */
+.timeline {
+  border-left: 3px solid #f5cfe0;
+  margin-left: 7px;
+  padding-left: 28px;
+}
+
+.timeline-item {
+  position: relative;      /* the dot is positioned against each item */
+  padding-bottom: 26px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -37px;
+  top: 7px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #d6336c;
+  border: 3px solid #fdf1f6;
+}
+
+.when {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #d6336c;
+}
+
+.where {
+  margin: 2px 0 0 0;
+}
+
+.marks {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 10px;
+  background-color: #7d1747;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Skills as tags */
+.tags li {
+  display: inline-block;
+  margin: 0 8px 10px 0;
+  padding: 6px 16px;
+  background-color: #ffffff;
+  border: 1px solid #f5cfe0;
+  border-radius: 30px;
+}
+
+.plain-list li {
+  padding: 10px 0 10px 22px;
+  border-bottom: 1px solid #f5cfe0;
+  position: relative;
+}
+
+.plain-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 21px;
+  width: 8px;
+  height: 8px;
+  background-color: #d6336c;
+}
+
+
+/* ---------- F. Contact page pieces ---------- */
+.contact-card {
+  background-color: #ffffff;
+  border: 1px solid #f5cfe0;
+  border-radius: 8px;
+  padding: 8px 26px;
+}
+
+.contact-row {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #f5cfe0;
+}
+
+.contact-row:last-child {
+  border-bottom: none;
+}
+
+.contact-label {
+  width: 110px;
+  flex-shrink: 0;
+  font-weight: 700;
+  color: #d6336c;
+}
+
+.contact-row a {
+  overflow-wrap: anywhere;
+}
+
+/* Yellow marker on blanks that still need real details.
+   Remove the <span class="fill-in"> tags once filled in. */
+.fill-in {
+  background-color: #fff0b3;
+  color: #5c4a00;
+  padding: 0 4px;
+}
+
+
+/* ---------- G. Tablets and phones ---------- */
+@media (max-width: 800px) {
+  /* The sidebar becomes a bar across the top */
+  #sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 18px 20px;
+  }
+
+  .avatar {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 1rem;
+    margin: 0 10px 0 0;
+    vertical-align: middle;
+  }
+
+  .profile-name {
+    display: inline-block;
+    font-size: 1.3rem;
+    vertical-align: middle;
+  }
+
+  .profile-line,
+  .sidebar-note {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    gap: 6px;
+    margin-top: 14px;
+  }
+
+  .menu li {
+    margin-bottom: 0;
+  }
+
+  .menu a {
+    padding: 6px 14px;
+    border-left: none;
+    border-bottom: 3px solid transparent;
+  }
+
+  .menu .current {
+    border-bottom-color: #ffffff;
+  }
+
+  #content {
+    margin-left: 0;
+    padding: 36px 20px 24px 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .glance {
+    flex-direction: column;
+  }
+
+  .contact-row {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
